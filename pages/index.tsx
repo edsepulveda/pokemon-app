@@ -19,8 +19,6 @@ const Home: NextPage<Props> = ({ pokemons }) => {
   )
 }
 
-
-
 export const getStaticProps: GetStaticProps = async () => {
   
   const {data} = await pokeApi.get<PokemonList>('/pokemon?limit=151')
@@ -29,7 +27,6 @@ export const getStaticProps: GetStaticProps = async () => {
     id: idx + 1,
     img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${ idx + 1}.svg`
   }))
-  console.log(pokemons)
 
   return {
     props: {
